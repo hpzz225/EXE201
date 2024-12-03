@@ -15,3 +15,12 @@ export type Product = {
     quantity: number;
     image: string;
 };
+export interface Order {
+    orderId: number;
+    orderDate: string;
+    customerName: string;
+    orderStatus: 'PENDING' | 'CONFIRMED' | 'CANCELED';
+    customerPhone: string;
+    serviceId?: number;
+    weight?: number;
+}

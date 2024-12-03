@@ -110,7 +110,29 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                                         {item.headSubtitle}
                                     </span>
                                 )} */}
-                                {item.description && (
+                                <div className="space-y-2">
+                                    {item.description
+                                        .split(',')
+                                        .map((desc, index) => (
+                                            <div
+                                                key={index}
+                                                className="flex items-center space-x-2"
+                                            >
+                                                <Image
+                                                    src="/images/star.png"
+                                                    alt="icon"
+                                                    width={24}
+                                                    height={24}
+                                                    className="text-[#22566e]"
+                                                />
+                                                <p className="text-[#22566e] text-xl font-normal">
+                                                    {desc}
+                                                </p>
+                                            </div>
+                                        ))}
+                                </div>
+
+                                {/* {item.description && (
                                     <>
                                         <div className="flex items-center space-x-2">
                                             <Image
@@ -121,7 +143,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                                                 className="text-[#22566e]"
                                             />
                                             <p className="text-[#22566e] text-xl font-normal">
-                                                {item.description.split(',')[0]}{' '}
+                                                {item.description.split(',')[0]}
                                             </p>
                                         </div>
                                         <div className="flex items-center space-x-2 mt-2">
@@ -137,7 +159,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                                             </p>
                                         </div>
                                     </>
-                                )}
+                                )} */}
                                 <button className="mt-4 px-6 py-3 bg-[#f3908a] rounded-lg text-white text-lg font-bold">
                                     {/* {item.buttonLabel} */}
                                     Đặt dịch vụ

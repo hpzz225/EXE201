@@ -17,7 +17,11 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(redirectUrl);
     }
 
-    if (userNavigate.startsWith('/quan-tri-vien') && role !== 'Admin') {
+    if (
+        userNavigate.startsWith('/quan-tri-vien') &&
+        role !== 'Admin' &&
+        role !== 'Staff'
+    ) {
         const redirectUrl = new URL('/not-found', request.url);
         return NextResponse.redirect(redirectUrl);
     }

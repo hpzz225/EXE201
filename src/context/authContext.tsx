@@ -90,7 +90,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     const result = await response.json();
                     setUser(result.data);
 
-                    if (result.data.role === 'Admin') {
+                    if (
+                        result.data.role === 'Admin' ||
+                        result.data.role === 'Staff'
+                    ) {
                         router.push('/quan-tri-vien/trang-chu');
                     }
                 } else {
