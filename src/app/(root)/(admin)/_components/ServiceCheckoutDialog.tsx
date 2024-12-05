@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Order, Service } from '@/types'; // Import the shared Order type
 
-interface EditOrderDialogProps {
+interface ServiceCheckoutDialogProps {
     open: boolean;
     order: Order | null;
     onClose: () => void;
@@ -11,7 +11,7 @@ interface EditOrderDialogProps {
     onChange: (updatedOrder: Order) => void;
 }
 
-const EditOrderDialog: React.FC<EditOrderDialogProps> = ({
+const ServiceCheckoutDialog: React.FC<ServiceCheckoutDialogProps> = ({
     open,
     order,
     onClose,
@@ -115,4 +115,4 @@ const EditOrderDialog: React.FC<EditOrderDialogProps> = ({
     );
 };
 
-export default EditOrderDialog;
+export default ServiceCheckoutDialog;
